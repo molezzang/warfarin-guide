@@ -150,6 +150,49 @@ main { max-width: 720px; margin: 0 auto; padding: 16px 16px 120px; }
 .tip-box h3 { font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
 .tip-box p  { font-size: 13px; color: var(--muted); line-height: 1.8; }
 
+/* ── 전체 모바일처럼 좁게 ── */
+.site-header, .search-bar-wrap, .notice, main {
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.notice { padding: 12px 16px 0; }
+
+/* ── info section title ── */
+.info-section-title {
+  font-size: 17px; font-weight: 700; color: var(--neutral);
+  margin: 32px 0 12px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+}
+
+/* ── INR 테이블 ── */
+.inr-table-wrap { margin-top: 12px; overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
+.inr-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.inr-table th { background: #f9fafb; padding: 10px 12px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); }
+.inr-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.inr-table tr:last-child td { border-bottom: none; }
+.inr-safe td { background: var(--safe-bg); }
+.inr-warn td  { background: var(--caution-bg); }
+.inr-danger td{ background: var(--avoid-bg); }
+
+/* ── 음주 카드 ── */
+.alcohol-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 12px; }
+.alcohol-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 8px; text-align: center; }
+.alc-emoji { font-size: 24px; margin-bottom: 6px; }
+.alc-name  { font-size: 13px; font-weight: 700; color: var(--neutral); margin-bottom: 4px; }
+.alc-limit { font-size: 14px; font-weight: 700; color: var(--avoid); }
+.alc-ml    { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+/* ── 타임라인 ── */
+.timeline { position: relative; padding-left: 24px; margin: 12px 0; }
+.timeline::before { content:''; position:absolute; left:8px; top:8px; bottom:8px; width:2px; background:var(--border); }
+.tl-item { position: relative; margin-bottom: 14px; }
+.tl-dot { position:absolute; left:-20px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--accent); border:2px solid var(--bg); }
+.tl-content { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 14px; }
+.tl-title { font-size:13px; font-weight:700; margin-bottom:4px; color:var(--neutral); }
+.tl-desc  { font-size:12px; color:var(--muted); line-height:1.7; }
+
 /* 빈 메시지 */
 .empty-msg { text-align: center; padding: 40px 0; color: var(--muted); font-size: 14px; }
 
@@ -251,6 +294,95 @@ main { max-width: 720px; margin: 0 auto; padding: 16px 16px 120px; }
   <p><strong>① 농축 한약·녹즙·건강기능식품</strong> — 성분이 수십 배 농축되어 약효를 예측 불가능하게 만듭니다.<br>
   <strong>② 자몽·크랜베리</strong> — 와파린 분해 효소를 막아 출혈을 유발합니다.<br>
   <strong>③ 과음</strong> — 와파린 대사를 방해하고 출혈 위험을 크게 높입니다.</p>
+</div>
+
+<!-- INR 섹션 -->
+<div class="info-section-title">🔬 INR 수치란?</div>
+<div class="tip-box">
+  <h3>INR이 무엇인가요?</h3>
+  <p>INR(국제정상화비율)은 혈액이 응고되는 속도를 표준화한 수치입니다. 와파린 복용 중에는 이 수치를 목표 범위 안에서 유지하는 것이 가장 중요합니다.</p>
+</div>
+<div class="inr-table-wrap">
+  <table class="inr-table">
+    <thead><tr><th>INR 수치</th><th>의미</th><th>조치</th></tr></thead>
+    <tbody>
+      <tr class="inr-danger"><td><strong>&lt; 1.5</strong></td><td>너무 낮음 — 혈전 위험</td><td>즉시 의사 연락</td></tr>
+      <tr class="inr-warn"><td><strong>1.5 ~ 2.0</strong></td><td>목표보다 낮음</td><td>가까운 시일 내 재확인</td></tr>
+      <tr class="inr-safe"><td><strong>2.0 ~ 3.0</strong></td><td>✅ 목표 범위 (일반적)</td><td>현재 복용량 유지</td></tr>
+      <tr class="inr-warn"><td><strong>3.0 ~ 4.0</strong></td><td>목표보다 높음</td><td>용량 감소 검토</td></tr>
+      <tr class="inr-danger"><td><strong>&gt; 4.0</strong></td><td>너무 높음 — 출혈 위험</td><td>즉시 의사 연락</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="tip-box" style="margin-top:12px">
+  <h3>📅 검사 주기</h3>
+  <p>처음 시작 시에는 <strong>1~2주마다</strong>, INR이 안정되면 <strong>4~6주 간격</strong>으로 검사합니다. 식단·생활에 큰 변화가 있으면 더 자주 받아야 합니다.</p>
+</div>
+<div class="tip-box" style="margin-top:12px">
+  <h3>🚨 즉시 병원에 가야 하는 신호</h3>
+  <p>출혈이 멈추지 않는 상처 · 붉은 소변 · 검은 변 · 심한 두통 · 이유 없는 멍은 즉시 병원에 가야 하는 응급 신호입니다.</p>
+</div>
+
+<!-- 음주 섹션 -->
+<div class="info-section-title">🍺 음주 안내</div>
+<div class="tip-box" style="border-left:4px solid var(--avoid)">
+  <h3>원칙: 금주</h3>
+  <p>알코올은 와파린 대사 효소에 영향을 주어 약효를 예측 불가능하게 만들고 출혈 위험을 크게 높입니다. <strong>가장 안전한 방법은 금주입니다.</strong></p>
+</div>
+<div class="alcohol-grid">
+  <div class="alcohol-card"><div class="alc-emoji">🍺</div><div class="alc-name">맥주</div><div class="alc-limit">최대 1~2잔</div><div class="alc-ml">약 360ml 이하</div></div>
+  <div class="alcohol-card"><div class="alc-emoji">🍷</div><div class="alc-name">와인</div><div class="alc-limit">최대 1잔</div><div class="alc-ml">약 150ml 이하</div></div>
+  <div class="alcohol-card"><div class="alc-emoji">🥃</div><div class="alc-name">소주·위스키</div><div class="alc-limit">최대 1잔</div><div class="alc-ml">약 30~45ml 이하</div></div>
+</div>
+<div class="tip-box" style="margin-top:12px;background:var(--avoid-bg);border:1px solid var(--avoid-border)">
+  <h3 style="color:var(--avoid)">⛔ 절대 금주해야 할 상황</h3>
+  <p style="color:var(--avoid)">INR 수치가 불안정한 상태 · 최근 출혈이 있었던 경우 · 간 질환이 있는 경우 · 와파린 용량이 막 조정된 직후</p>
+</div>
+
+<!-- 수술·시술 섹션 -->
+<div class="info-section-title">🏥 수술·시술 전 주의사항</div>
+<div class="tip-box" style="border-left:4px solid var(--avoid)">
+  <h3>⚠️ 절대 임의로 약을 끊지 마세요</h3>
+  <p>와파린을 갑자기 중단하면 심혈관 질환(혈전·뇌졸중) 위험이 급격히 높아집니다. 반드시 담당 의사와 상의 후 결정하세요.</p>
+</div>
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <div class="tl-title">수술 결정 시 (최소 1~2주 전)</div>
+      <div class="tl-desc">와파린을 처방한 담당 의사에게 반드시 알리고 약 조절 계획을 협의합니다.</div>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <div class="tl-title">수술 전 5~7일</div>
+      <div class="tl-desc">의사의 지시에 따라 와파린 복용을 중단합니다. 임의로 날짜를 바꾸지 마세요.</div>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot"></div>
+    <div class="tl-content">
+      <div class="tl-title">수술 직전 INR 확인</div>
+      <div class="tl-desc">혈액 응고 검사로 와파린 효과가 충분히 감소했는지 확인합니다.</div>
+    </div>
+  </div>
+  <div class="tl-item" style="--dot-color: var(--safe)">
+    <div class="tl-dot" style="background:var(--safe)"></div>
+    <div class="tl-content">
+      <div class="tl-title">수술 후</div>
+      <div class="tl-desc">의사 지시에 따라 와파린 복용을 재개합니다. INR이 안정될 때까지 더 자주 검사받으세요.</div>
+    </div>
+  </div>
+</div>
+<div class="tip-box" style="margin-top:12px">
+  <h3>주의가 필요한 시술</h3>
+  <p>🦷 <strong>치과 치료</strong> (발치·임플란트) · 💉 <strong>근육주사·침·부항</strong> · 🩺 <strong>조직 검사 동반 내시경</strong><br>
+  모두 사전에 담당 의사와 반드시 상의하세요.</p>
+</div>
+<div class="tip-box" style="margin-top:12px">
+  <h3>💊 수술 전 중단해야 할 영양제</h3>
+  <p>오메가-3, 인삼·홍삼, 은행잎 추출물, 고용량 비타민E, 아마씨유 등 항응고 성질이 있는 모든 보충제는 수술 최소 1~2주 전에 중단하세요.</p>
 </div>
 
 </main>
